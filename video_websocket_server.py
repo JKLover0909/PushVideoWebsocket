@@ -142,7 +142,7 @@ class VideoStreamServer:
                 print("✅ Server đã dừng")
 
 def main():
-    video_path = "/home/ubuntu/vnet/PushVideoWebsocket/khuyet1.mp4"
+    video_path = "/home/ubuntu/vnet/PushVideoWebsocket/khuyet2.mp4"
     server = VideoStreamServer(video_path=video_path, host="0.0.0.0", port=8765)
     try:
         asyncio.run(server.start_server())
