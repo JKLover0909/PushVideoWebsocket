@@ -1,0 +1,23 @@
+# Python / Jupyter
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Tunnel binaries / runtime logs (may contain URLs, IPs, tokens)
+ngrok
+ngrok.exe
+ngrok-*.zip
+ngrok.yml
+*.log
+nohup.out
+
+# Secrets
+.env
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
