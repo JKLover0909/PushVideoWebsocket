@@ -4,6 +4,14 @@ import 'package:web_socket_channel/status.dart' as status;
 import 'dart:convert';
 import 'dart:typed_data';
 
+// Địa chỉ WebSocket server. Truyền khi build/run:
+//   flutter run --dart-define=WS_URL=wss://<ngrok-host>/
+// Mặc định ws://10.0.2.2:8765 = máy host khi chạy trên Android emulator.
+const String kWebSocketUrl = String.fromEnvironment(
+  'WS_URL',
+  defaultValue: 'ws://10.0.2.2:8765',
+);
+
 void main() {
   runApp(const MyApp());
 }
@@ -71,7 +79,7 @@ class _WebSocketPageState extends State<WebSocketPage> {
   void _connectWebSocket() {
     try {
       channel = WebSocketChannel.connect(
-        Uri.parse('wss://a16a9f0647f7.ngrok-free.app/'),
+        Uri.parse(kWebSocketUrl),
       );
 
       setState(() {

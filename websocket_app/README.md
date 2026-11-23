@@ -4,7 +4,7 @@
 
 ## 🚀 Tính năng chính
 
-- ✅ **Kết nối WebSocket realtime** với `wss://a16a9f0647f7.ngrok-free.app/`
+- ✅ **Kết nối WebSocket realtime** tới URL cấu hình qua `--dart-define=WS_URL=...` (mặc định `ws://10.0.2.2:8765`)
 - ✅ **Tự động giải mã Base64** thành ảnh JPEG
 - ✅ **Hiển thị ảnh trực tiếp** trong giao diện chat
 - ✅ **Nhận diện JSON** và tự động parse dữ liệu
@@ -88,10 +88,10 @@ dependencies:
 ## 📝 Customization
 
 ### Thay đổi WebSocket URL:
-```dart
-channel = WebSocketChannel.connect(
-  Uri.parse('wss://your-server.com/'),
-);
+Không cần sửa code, truyền URL khi chạy hoặc build:
+```bash
+flutter run --dart-define=WS_URL=wss://your-server.com/
+flutter build apk --dart-define=WS_URL=wss://your-server.com/
 ```
 
 ### Tùy chỉnh detection base64:

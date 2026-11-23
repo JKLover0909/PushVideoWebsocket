@@ -8,7 +8,7 @@ Streams video frames over WebSocket to a Flutter mobile client, with a YOLO-styl
 - `Code.ipynb` — experiments (frame sending, model inference).
 - `best.pt` / `best.onnx` — trained detection model (PyTorch / ONNX export).
 - `khuyet1.mp4`, `khuyet2.mp4` — demo videos.
-- `websocket_app/` — Flutter app (`lib/main.dart` connects to the server via `wss://<ngrok-host>/`; the ngrok URL is hard-coded and ephemeral — update it for each tunnel).
+- `websocket_app/` — Flutter app (`lib/main.dart` connects to `kWebSocketUrl`, set at build time with `--dart-define=WS_URL=wss://<ngrok-host>/`; default `ws://10.0.2.2:8765` for the Android emulator).
 - `ngrok`, `ngrok-stable-linux-amd64.zip`, `ngrok.log`, `nohup.out` — tunnel binary/logs, untracked and gitignored.
 
 ## Commands
